@@ -1,10 +1,12 @@
 const request = require('supertest');
 const {expect} = require ('chai');
+require('dotenv').config();
+console.log("BASE_URL:", process.env.BASE_URL);
 
 describe('Login', () => {
    describe('POST /login', () => {
       it('should return 200 OK for valid credentials', async () => {
-         const response = await request('http://localhost:3000')
+         const response = await request(process.env.BASE_URL)
 
             .post('/login')
             .set('Content-Type', 'application/json')
