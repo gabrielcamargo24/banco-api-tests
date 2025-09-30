@@ -17,12 +17,12 @@ describe('Transferencias', () => {
             .set('Content-Type', 'application/json')
             .set('Authorization', `Bearer ${token}`)
             .send({
-                contaOrigem: 1,
-                contaDestino: 2,
+                contaOrigem: 4,
+                contaDestino: 5,
                 valor: 11,
                 token:""
                     });
-            expect(response.status).to.equal(404);
+            expect(response.status).to.equal(201);
             console.log(response.body);
               });
 
@@ -39,8 +39,8 @@ describe('Transferencias', () => {
             .set('Content-Type', 'application/json')
             .set('Authorization', `Bearer ${token}`)
             .send({
-                contaOrigem: 1,
-                contaDestino: 2,
+                contaOrigem: 4,
+                contaDestino: 5,
                 valor: 5,
                 token:""
                     });
